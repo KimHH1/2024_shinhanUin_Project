@@ -1,0 +1,96 @@
+plugins {
+    id "com.android.application"
+    id "kotlin-android"
+    // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
+    id "dev.flutter.flutter-gradle-plugin"
+    id "com.google.gms.google-services"
+}
+
+def localProperties = new Properties()
+def localPropertiesFile = rootProject.file("local.properties")
+if (localPropertiesFile.exists()) {
+    localPropertiesFile.withReader("UTF-8") { reader ->
+        localProperties.load(reader)
+    }
+}
+
+def keystoreProperties = new Properties()
+def keystorePropertiesFile = rootProject.file('keystore.properties')
+if (keystorePropertiesFile.exists()) {
+    keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+}
+
+
+def flutterVersionCode = localProperties.getProperty("flutter.versionCode")
+if (flutterVersionCode == null) {
+    flutterVersionCode = "1"
+}
+
+def flutterVersionName = localProperties.getProperty("flutter.versionName")
+if (flutterVersionName == null) {
+    flutterVersionName = "1.0"
+}
+
+android {
+    namespace = "com.example.travelapp"
+    compileSdk = flutter.compileSdkVersion
+    ndkVersion = flutter.ndkVersion
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+
+    defaultConfig {
+        // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
+        applicationId = "com.example.travelapp"
+        // You can update the following values to match your application needs.
+        // For more information, see: https://docs.flutter.dev/deployment/android#reviewing-the-gradle-build-configuration.
+        minSdkVersion 23
+//        minSdk = flutter.minSdkVersion
+        targetSdk = flutter.targetSdkVersion 
+        versionCode = flutterVersionCode.toInteger()
+        versionName = flutterVersionName
+
+    }
+
+    signingConfigs {
+        release {
+            keyAlias keystoreProperties['key.alias.name']
+            keyPassword keystoreProperties['key.alias.password']
+            storeFile keystoreProperties['key.store.file'] ? file(keystoreProperties['key.store.file']) : null
+            storePassword keystoreProperties['key.store.password']
+        }
+    }
+
+    buildTypes {
+        release {
+            // TODO: Add your own signing config for the release build.
+            // Signing with the debug keys for now, so `flutter run --release` works.
+            signingConfig signingConfigs.debug
+            shrinkResources false
+            minifyEnabled false
+        }
+    }
+}
+repositories { // 여기서 오류 뜨면 삭제 가능
+    google()
+    mavenCentral()
+    jcenter()
+    maven { url 'https://devrepo.kakao.com/nexus/content/groups/public/' }
+}
+
+dependencies {
+    // Firebase Core 추가
+    implementation platform('com.google.firebase:firebase-bom:32.0.0') // 최신 버전 확인
+    implementation 'com.google.firebase:firebase-analytics'
+    implementation 'com.google.android.gms:play-services-auth:19.2.0'
+
+}
+
+flutter {
+    source = "../.."
+}
+
+apply from: project(':flutter_config').projectDir.getPath() + "/dotenv.gradle"
+

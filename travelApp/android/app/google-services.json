@@ -1,0 +1,95 @@
+{
+  "project_info": {
+    "project_number": "1045316182808",
+    "firebase_url": "https://travel-algorithm-app-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "travel-algorithm-app",
+    "storage_bucket": "travel-algorithm-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1045316182808:android:063fa5046d685cc98cb46d",
+        "android_client_info": {
+          "package_name": "com.example.travelapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1045316182808-16c1f0c391jqbjnk8kf42o4tt9br8s3i.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.travelapp",
+            "certificate_hash": "58729570b3d0ad7d688ee0410b6d5c3ad4c72f69"
+          }
+        },
+        {
+          "client_id": "1045316182808-1f3taiduotieskuujihiuqbo75doe9dc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.travelapp",
+            "certificate_hash": "918224832f4901e668e1d244c02c94db1d7874e1"
+          }
+        },
+        {
+          "client_id": "1045316182808-m59v85v0sobt2vulni2udq20laurkevu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.travelapp",
+            "certificate_hash": "e591e5d336bcda979de040cda90bfeac30b98534"
+          }
+        },
+        {
+          "client_id": "1045316182808-nn892csgjnc35411a9tjgna4jjv2rcuj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.travelapp",
+            "certificate_hash": "c33cc86cafcefe31ffb63d49b9c4ca0943d8e3dd"
+          }
+        },
+        {
+          "client_id": "1045316182808-p2ohoiei8t50ofab8htvsnuc5h5vlesq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.travelapp",
+            "certificate_hash": "6ad8ab69ad205b1b35f9454b40ae3fb217de32da"
+          }
+        },
+        {
+          "client_id": "1045316182808-tv7vfo5tmm4f45ljhs7gvcqk39b2f1in.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.travelapp",
+            "certificate_hash": "ef84dcf1181fd8ded00dd5a5adc9619a0e84fa75"
+          }
+        },
+        {
+          "client_id": "1045316182808-sj0kktdcs8d9km8jht99s6bmmo1i2jnn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCvlglRHla8rO-Pjo_xRBmJ5kGvOxPmZZc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1045316182808-mi9u0eleo53g72t9cm3iqcbg0uphupkk.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1045316182808-1910fsq8kmbtl2ojehfjs4gchc2k5ap1.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.travelapp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

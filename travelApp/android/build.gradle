@@ -1,0 +1,46 @@
+subprojects {
+    afterEvaluate { project ->
+        if (project.plugins.hasPlugin("com.android.application") ||
+                project.plugins.hasPlugin("com.android.library")) {
+            project.android {
+                compileSdkVersion 34
+                buildToolsVersion "34.0.0"
+            }
+        }
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+        jcenter()
+    }
+}
+
+rootProject.buildDir = "../build"
+subprojects {
+    project.buildDir = "${rootProject.buildDir}/${project.name}"
+}
+subprojects {
+    project.evaluationDependsOn(":app")
+}
+
+tasks.register("clean", Delete) {
+    delete rootProject.buildDir
+}
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+        jcenter()
+        dependencies {
+            // Add the Google services Gradle plugin
+            classpath 'com.google.gms:google-services:4.3.10' // 최신 버전 확인
+        }
+    }
+}
+
+//kotlinOptions {
+//    jvmTarget = "17"
+//}
